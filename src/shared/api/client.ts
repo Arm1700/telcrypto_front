@@ -1,9 +1,7 @@
 import axios from 'axios';
 
-// Prefer explicit env; in local dev default to backend at http://localhost:8000
-const ENV_BASE = (import.meta as any).env?.VITE_API_URL as string | undefined;
-const isLocalDev = typeof window !== 'undefined' && window.location?.port === '3000';
-const API_BASE_URL = ENV_BASE ?? (isLocalDev ? 'http://localhost:8000' : '');
+// Use environment variable or default to backend service name in Docker
+const API_BASE_URL = (import.meta as any).env?.VITE_API_URL || 'http://backend:8000';
 
 export const apiClient = axios.create({
   baseURL: API_BASE_URL,
