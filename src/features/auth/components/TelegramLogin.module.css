@@ -1,0 +1,41 @@
+.telegramLoginBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #0088cc;
+  cursor: pointer;
+  transition: background 0.2s ease-in-out;
+}
+
+.telegramLoginBtn:hover {
+  background: #057db9;
+}
+
+.telegramIcon {
+  width: 22px;
+  height: 22px;
+}
+
+.telegramButton {
+  background: #0088cc;
+  color: #ffffff;
+  border: 1px solid #0088cc;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s ease-in-out, border-color 0.2s ease-in-out;
+}
+
+.telegramButton:hover {
+  background: #057db9;
+  border-color: #057db9;
+}
+
+
+
+
+
+
