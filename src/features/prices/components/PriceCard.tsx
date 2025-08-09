@@ -74,4 +74,23 @@ export const PriceCard: React.FC<PriceCardProps> = ({ price, previousPrice }) =>
 };
 
 
+export const PriceCardSkeleton: React.FC = () => {
+  return (
+    <Card className="hover:shadow-md transition-shadow">
+      <div className="flex items-center justify-between">
+        <div>
+          <div style={{ width: 72, height: 20, background: '#eef1f4', borderRadius: 6 }} />
+          <div style={{ width: 56, height: 12, background: '#f3f5f7', borderRadius: 6, marginTop: 6 }} />
+        </div>
+        <div className="text-right">
+          <div style={{ width: 90, height: 22, background: '#eef1f4', borderRadius: 6 }} />
+          <div style={{ width: 60, height: 16, background: '#f3f5f7', borderRadius: 6, marginTop: 6 }} />
+        </div>
+      </div>
+      <div className="mt-2" style={{ width: 140, height: 10, background: '#f3f5f7', borderRadius: 6 }} />
+    </Card>
+  );
+};
+
+
 

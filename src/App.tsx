@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Header } from './widgets/Header';
 import { MarketStats, CryptoTable } from './widgets/Prices';
+import { MarketStatsSkeleton } from './widgets/Prices/MarketStats/MarketStats.skeleton';
 import { LoginModal } from './features/auth/ui';
 import { CryptoPrice } from './shared/types';
 import { useMarketStats } from '@/features/market/hooks/useMarketStats';
@@ -28,7 +29,6 @@ function App() {
     const ws = new WebSocket(wsUrl);
     
     ws.onopen = () => {
-      console.log('Connected to WebSocket');
       setIsConnected(true);
     };
 
@@ -68,12 +68,11 @@ function App() {
           });
         }
       } catch (error) {
-        console.error('Error parsing WebSocket message:', error);
+        // swallow parse errors
       }
     };
 
     ws.onclose = () => {
-      console.log('Disconnected from WebSocket');
       setIsConnected(false);
     };
 
@@ -93,7 +92,7 @@ function App() {
   return (
     <div className="app">
       <Header onLoginClick={handleLoginClick} isConnected={isConnected} />
-      {marketStats && <MarketStats stats={marketStats} />}
+      {marketStats ? <MarketStats stats={marketStats} /> : <MarketStatsSkeleton />}
       <CryptoTable prices={prices} />
       <LoginModal isOpen={showLoginModal} onClose={handleCloseModal} />
     </div>

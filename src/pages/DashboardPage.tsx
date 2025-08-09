@@ -10,7 +10,7 @@ export const DashboardPage: React.FC = () => {
   const { user, logout } = useAuth();
   const { prices, isConnected, isLoading, error } = usePrices(['BTCUSDT', 'ETHUSDT', 'SOLUSDT']);
 
-  console.log('DashboardPage render:', { prices, isConnected, isLoading, error, pricesLength: prices.length });
+  
 
   const defaultSymbols = ['BTCUSDT', 'ETHUSDT', 'BNBUSDT', 'ADAUSDT', 'SOLUSDT'];
 

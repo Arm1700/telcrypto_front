@@ -64,9 +64,7 @@ export const usePrices = (symbols?: string[]) => {
     setPrices(prev => mergePrices(prev, normalized));
   }, [mergePrices]);
 
-  const handleWebSocketError = useCallback((error: string) => {
-    console.error('WebSocket error:', error);
-  }, []);
+  const handleWebSocketError = useCallback((_error: string) => {}, []);
 
   const { isConnected: wsConnected } = useWebSocket(
     updatePrice,

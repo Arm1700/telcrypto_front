@@ -21,7 +21,6 @@ export const useAuth = (): UseAuthReturn => {
       localStorage.setItem('user', JSON.stringify(response.user));
       setUser(response.user);
     } catch (error) {
-      console.error('Login failed:', error);
       throw error;
     }
   }, []);
@@ -43,7 +42,6 @@ export const useAuth = (): UseAuthReturn => {
       const userData = await authApi.verifyToken();
       setUser(userData);
     } catch (error) {
-      console.error('Token verification failed:', error);
       logout();
     } finally {
       setLoading(false);

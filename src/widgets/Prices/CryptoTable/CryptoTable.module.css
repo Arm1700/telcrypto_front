@@ -1,3 +1,183 @@
-@import '@/features/prices/ui/CryptoTable/CryptoTable.module.css';
+.cryptoTableSection {
+  background: #ffffff;
+  padding: 2rem 0;
+}
 
+.tableContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.tableHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.tableHeader h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1e2329;
+  margin: 0;
+}
+
+.tableControls {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.connectionStatus {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  background: #f8fafd;
+  border-radius: 8px;
+  border: 1px solid #e1e5e9;
+}
+
+.statusDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.statusDot.connected {
+  background: #00c853;
+  box-shadow: 0 0 0 2px rgba(0, 200, 83, 0.2);
+}
+
+.statusDot.disconnected {
+  background: #ff3d00;
+  box-shadow: 0 0 0 2px rgba(255, 61, 0, 0.2);
+}
+
+.statusText {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: #6b7280;
+}
+
+.tableSelect {
+  padding: 0.5rem;
+  border: 1px solid #e1e5e9;
+  border-radius: 8px;
+  background: #ffffff;
+  font-size: 0.875rem;
+}
+
+.tableWrapper {
+  overflow-x: auto;
+  border: 1px solid #e1e5e9;
+  border-radius: 12px;
+}
+
+.cryptoTable {
+  width: 100%;
+  border-collapse: collapse;
+  background: #ffffff;
+}
+
+.cryptoTable th {
+  background: #f8fafd;
+  padding: 1rem 0.75rem;
+  text-align: left;
+  font-weight: 600;
+  color: #6b7280;
+  font-size: 0.875rem;
+  border-bottom: 1px solid #e1e5e9;
+}
+
+.cryptoTable td {
+  padding: 1rem 0.75rem;
+  border-bottom: 1px solid #f1f5f9;
+  font-size: 0.875rem;
+}
+
+.cryptoRow:hover {
+  background: #f8fafd;
+}
+
+.rankCell {
+  font-weight: 600;
+  color: #6b7280;
+  width: 50px;
+}
+
+.nameCell {
+  min-width: 150px;
+}
+
+.cryptoInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.cryptoSymbol {
+  font-weight: 600;
+  color: #1e2329;
+}
+
+.cryptoName {
+  font-size: 0.75rem;
+  color: #6b7280;
+}
+
+.priceCell {
+  font-weight: 600;
+  color: #1e2329;
+}
+
+.changeCell {
+  font-weight: 500;
+}
+
+.changeCell.positive {
+  color: #00c853;
+}
+
+.changeCell.negative {
+  color: #ff3d00;
+}
+
+.marketCapCell,
+.volumeCell {
+  color: #1e2329;
+}
+
+.supplyCell {
+  color: #6b7280;
+}
+
+.chartCell {
+  width: 80px;
+}
+
+.miniChart {
+  font-size: 1rem;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .tableHeader {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+  
+  .cryptoTable th,
+  .cryptoTable td {
+    padding: 0.75rem 0.5rem;
+    font-size: 0.75rem;
+  }
+  
+  .nameCell {
+    min-width: 120px;
+  }
+}
 

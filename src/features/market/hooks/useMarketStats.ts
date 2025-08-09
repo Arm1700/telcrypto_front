@@ -5,7 +5,7 @@ import { MarketStats } from '@/shared/types';
 export function useMarketStats() {
   return useQuery<MarketStats>({
     queryKey: ['marketStats', 'global'],
-    queryFn: fetchGlobalMarketStats,
+    queryFn: async () => await fetchGlobalMarketStats(),
     refetchInterval: 60_000, // обновлять раз в минуту
     staleTime: 30_000,
   });
